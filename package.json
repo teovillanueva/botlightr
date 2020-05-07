@@ -1,6 +1,6 @@
 {
 	"name": "botlightr",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"description": "A simple library for making discord.js bot commands.",
 	"main": "dist/bundle.js",
 	"typings": "dist/index.d.ts",
