@@ -4,7 +4,6 @@
 	"description": "A simple library for making discord.js bot commands.",
 	"main": "dist/bundle.js",
 	"typings": "dist/index.d.ts",
-	"commands": "src/commands",
 	"scripts": {
 		"build:dev": "webpack --mode=development",
 		"build:production": "webpack --mode=production",

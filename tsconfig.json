@@ -15,5 +15,6 @@
 		},
 		"resolveJsonModule": true
 	},
+	"include": ["src"],
 	"exclude": ["webpack.config.ts", "examples"]
 }
