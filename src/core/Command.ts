@@ -22,8 +22,6 @@ interface ICommandConfig<T, U> {
 interface IContext<U> {
     message: Message;
     author: Message["author"];
-    reply: Message["reply"];
-    send: Message["channel"]["send"];
     mentioned: { [key: string]: User };
     args: U;
     bot: Bot;
@@ -108,8 +106,6 @@ export class Command<T extends string, U = { [K in T]: string }> {
             author: message.author,
             error: error,
             message: message,
-            reply: message.reply,
-            send: message.channel.send,
             command: this,
             mentioned: {}
         }

@@ -62,14 +62,14 @@ export const SumCommand = new Command({
     alias: "s",
     description: "Sums up two numbers",
     args: ["n1", "n2"],
-    async handler({ args, send, reply }) {
+    async handler({ args, message, channel }) {
         const result = parseInt(args.n1) + parseInt(args.n2);
 
         if (isNaN(result)) {
-            return await reply("Make shure both numbers are valid!");
+            return await message.reply("Make shure both numbers are valid!");
         }
 
-        await send(`${args.n1} + ${args.n2} = ${result}`);
+        await channel.send(`${args.n1} + ${args.n2} = ${result}`);
     }
 })
 ```
@@ -82,9 +82,9 @@ import { Command, CommandSyntaxError } from "botlightr";
 
 export const SumCommand = new Command({
     ...,
-    async onError({ error, reply }) {
+    async onError({ error, message }) {
         if (error instanceof CommandSyntaxError) {
-            return reply(`Please use the command like this ${error.usage}`);
+            return message.reply(`Please use the command like this ${error.usage}`);
         };
     },
 });
@@ -98,7 +98,7 @@ Botlightr comes with full native support for typescript. It gives you full intel
 export const SayCommand = new Command({
     name: "say",
     args: ["word"], // Unique arg
-    async handler({ args, send }) {
+    async handler({ args }) {
         args.word // Valid
         args.duck // Property 'duck' does not exist on type '{ word: string; }'
     },
