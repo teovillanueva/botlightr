@@ -15,7 +15,7 @@
 		"type": "git",
 		"url": "git+https://github.com/teovillanueva/botlightr.git"
 	},
-	"author": "",
+	"author": "Teodoro Villanueva",
 	"license": "ISC",
 	"devDependencies": {
 		"@types/node": "^13.11.0",
