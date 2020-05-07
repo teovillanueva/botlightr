@@ -10,14 +10,17 @@ npm install botlightr
 ```
 
 ## Setup
+
 Letting Botlightr manage the discord.js Client
+
 ```typescript
 import { Bot } from "botlightr";
 
-const myBot = new Bot({ prefix: "!", token: "<your_token_here>" }) // token is optional, you can still pass it in the login method
+const myBot = new Bot({ prefix: "!", token: "<your_bot_token_here>" }) // token is optional, you can still pass it in the login method
 
 myBot.login("<your_bot_token_here>") // The token argument is optional since you can set it on the bot first constructor agument
 ```
+
 Passing your own discord.js Client
 
 ```typescript
@@ -29,8 +32,9 @@ const myClient = new Client();
 
 const myBot = new Bot({ prefix: "!" }, myClient); // You have to pass the client as the second argument
 
-myClient.login("<your_token_here>")
+myClient.login("<your_bot_token_here>")
 ```
+
 ## Defining commands
 
 Creating a simple ping-pong command
@@ -77,10 +81,26 @@ We'll use the sum command from above for the following example. When an error is
 import { Command, CommandSyntaxError } from "botlightr";
 
 export const SumCommand = new Command({
+    ...,
     async onError({ error, reply }) {
         if (error instanceof CommandSyntaxError) {
             return reply(`Please use the command like this ${error.usage}`);
         };
+    },
+});
+```
+
+## Command arguments
+
+Botlightr comes with full native support for typescript. It gives you full intellisense over your code! You can still use botlightr in plain javascript.
+
+```typescript
+export const SayCommand = new Command({
+    name: "say",
+    args: ["word"], // Unique arg
+    async handler({ args, send }) {
+        args.word // Valid
+        args.duck // Property 'duck' does not exist on type '{ word: string; }'
     },
 });
 ```
@@ -94,8 +114,6 @@ import { PingPongCommand } from "./commands";
 
 myBot.registerCommand(PingPongCommand);
 ```
-
-##
 
 If you want to register multpile commands at once you can use the following bot instance method
 
