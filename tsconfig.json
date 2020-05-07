@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+		"target": "es5",
+		"module": "commonjs",
+		"lib": ["ES2015"],
+		"declaration": true,
+		"strict": true,
+		"esModuleInterop": true,
+		"baseUrl": "./src",
+		"outDir": "./dist",
+		"paths": {
+			"@commands/*": ["commands/*"],
+			"@core/*": ["core/*"],
+			"@core": ["core/index"]
+		},
+		"resolveJsonModule": true
+	},
+	"exclude": ["webpack.config.ts", "examples"]
+}

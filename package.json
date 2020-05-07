@@ -1,0 +1,41 @@
+{
+	"name": "botlightr",
+	"version": "1.0.0",
+	"description": "A simple library for making discord.js bot commands.",
+	"main": "dist/bundle.js",
+	"typings": "dist/index.d.ts",
+	"commands": "src/commands",
+	"scripts": {
+		"build:dev": "webpack --mode=development",
+		"build:production": "webpack --mode=production",
+		"dev": "webpack --watch --mode=development",
+		"prepare": "npm run build:production"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/teovillanueva/botlightr.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/node": "^13.11.0",
+		"@types/webpack-env": "^1.15.1",
+		"@types/webpack-node-externals": "^1.7.1",
+		"nodemon": "^2.0.2",
+		"nodemon-webpack-plugin": "^4.3.1",
+		"ts-loader": "^6.2.2",
+		"ts-node": "^8.8.2",
+		"tsconfig-paths-webpack-plugin": "^3.2.0",
+		"typescript": "^3.8.3",
+		"webpack": "^4.42.1",
+		"webpack-cli": "^3.3.11",
+		"webpack-node-externals": "^1.7.2"
+	},
+	"dependencies": {
+		"discord.js": "^12.1.1"
+	},
+	"bugs": {
+		"url": "https://github.com/teovillanueva/botlightr/issues"
+	},
+	"homepage": "https://github.com/teovillanueva/botlightr#readme"
+}
