@@ -45,8 +45,8 @@ import { Command } from "botlightr";
 export const PingPongCommand = new Command({
     name: "ping",
     args: [],
-    async handler({ reply }) {
-        await reply("pong!");
+    async handler({ message }) {
+        await message.reply("pong!");
     },
 });
 
