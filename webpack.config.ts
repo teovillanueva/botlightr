@@ -1,9 +1,5 @@
 import path from "path";
 
-import { commands } from "./package.json";
-
-import { DefinePlugin } from "webpack";
-
 import Externals from "webpack-node-externals";
 import TsconfigPathsPlugin from "tsconfig-paths-webpack-plugin";
 import NodemonPlugin from "nodemon-webpack-plugin"
@@ -36,6 +32,5 @@ export default {
     },
     plugins: [
         new NodemonPlugin(),
-        new DefinePlugin({ COMMANDS_PATH: JSON.stringify(path.resolve(__dirname, commands)) })
     ],
 }

@@ -39,17 +39,17 @@ export class Bot {
      */
     public registerCommands(commands?: Command<any, any>[]) {
 
-        if (!commands) {
-            const requireCommand = require.context(COMMANDS_PATH, true, /\.ts$/);
+        // if (!commands) {
+        //     const requireCommand = require.context(COMMANDS_PATH, true, /\.ts$/);
 
-            const commands = requireCommand.keys().map(key => {
-                if (key.endsWith(".ts")) {
-                    return requireCommand(key).default;
-                }
-            }) as Command<any, any>[];
+        //     const commands = requireCommand.keys().map(key => {
+        //         if (key.endsWith(".ts")) {
+        //             return requireCommand(key).default;
+        //         }
+        //     }) as Command<any, any>[];
 
-            this.commands = [...this.commands, ...commands];
-        }
+        //     this.commands = [...this.commands, ...commands];
+        // }
 
         if (Array.isArray(commands)) {
             commands.forEach(command => {
