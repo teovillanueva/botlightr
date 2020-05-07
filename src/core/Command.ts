@@ -91,9 +91,9 @@ export class Command<T extends string, U = { [K in T]: string }> {
      */
     private getContext(bot: Bot, message: Message, args: string[], error?: Error): IContext<U> {
         const formatedArgs = this.castArgsToObject(args, bot);
-
         if (!error) {
-            if (Object.keys(formatedArgs).length !== this.args.length || (!this.textArgIndex && args.length > this.args.length)) {
+            if ((Object.keys(formatedArgs).length !== this.args.length && this.textArgIndex !== 0) || (!this.textArgIndex && this.textArgIndex !== 0 && args.length > this.args.length)) {
+                console.log("Throwing error")
                 throw new CommandSyntaxError(bot, this)
             }
         }
