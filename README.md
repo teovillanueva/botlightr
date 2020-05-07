@@ -45,8 +45,8 @@ import { Command } from "botlightr";
 export const PingPongCommand = new Command({
     name: "ping",
     args: [],
-    async handler({ message }) {
-        await message.reply("pong!");
+    async handler({ reply }) {
+        await reply("pong!");
     },
 });
 
@@ -71,7 +71,7 @@ export const SumCommand = new Command({
 
         await channel.send(`${args.n1} + ${args.n2} = ${result}`);
     }
-})
+});
 ```
 
 ## Error handling
